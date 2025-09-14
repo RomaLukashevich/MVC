@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Просмотр книги</title>
+</head>
+<body>
+<h1>Информация о книге</h1>
+
+<p><strong>Название:</strong> <span th:text="${book.title}"></span></p>
+<p><strong>Автор:</strong> <span th:text="${book.author}"></span></p>
+<p><strong>Год издания:</strong> <span th:text="${book.publishYear}"></span></p>
+<p><strong>Оглавление (XML):</strong></p>
+<pre th:text="${book.content}"></pre>
+
+<br/>
+<a th:href="@{/books/{id}/edit(id=${book.id})}">Редактировать книгу</a>
+<br/>
+<a href="/books">Назад к списку</a>
+</body>
+</html>
